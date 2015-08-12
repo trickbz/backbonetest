@@ -15,5 +15,12 @@
   "bugs": {
     "url": "https://github.com/trickbz/backbonetest/issues"
   },
-  "homepage": "https://github.com/trickbz/backbonetest#readme"
+  "homepage": "https://github.com/trickbz/backbonetest#readme",
+  "dependencies": {
+    "body-parser": "^1.13.3",
+    "express": "^4.13.3",
+    "gulp": "^3.9.0",
+    "gulp-jshint": "^1.11.2",
+    "gulp-open": "^1.0.0"
+  }
 }
