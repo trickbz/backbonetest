@@ -36,8 +36,8 @@ define([
 	) {
 		var posts = new Posts();
 		posts.fetch({
-			success: function(items, response, options) {
-				var template = _.template(PostsTableTemplate)({posts: items});
+			success: function (items, response, options) {
+				var template = _.template(PostsTableTemplate)({ posts: items.toJSON() });
 				PostsTableView.render(template);
 			}
 		});

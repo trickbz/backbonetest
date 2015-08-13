@@ -4,7 +4,10 @@ define([
 ], function ($, Backbone) {
 
 	var PostsTableView = Backbone.View.extend({
-		el: $('#postsTable')
+		el: $('#postsTable'),
+		render: function (template) {
+			this.$el.html(template);
+		}
 	});
 	
 	return new PostsTableView();

@@ -6,5 +6,4 @@ define([
 		urlRoot: '/posts'
 	});
 	return Post;
-})
-
+});
