@@ -1,0 +1,24 @@
+<table border="1">
+	<tr>
+		<th>id</th>
+		<th>title</th>
+		<th>body</th>
+		<th>createdOn</th>
+	</tr>
+	<% _.each(posts, function(post, index) { %>
+		<tr>
+			<td>
+				<%= post.id  %>
+			</td>
+			<td>
+				<%= post.title  %>
+			</td>
+			<td>
+				<%= post.body  %>
+			</td>
+			<td>
+				<%= post.createdOn  %>
+			</td>
+		</tr>
+		<% }) %>
+</table>
