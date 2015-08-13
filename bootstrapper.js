@@ -1,46 +1,44 @@
 require.config({
 	baseUrl: '.',
 	paths: {
-		paths: {
-			// app locations
-			'view': 'js/views',
-			'model': 'js/models',
-			'collection': 'js/collections',
+		// app locations
+		'view': 'js/views',
+		'model': 'js/models',
+		'collection': 'js/collections',
 		
-			// frameworks
-			'jquery': 'bower_components/jquery/dist/jquery',
-			'text': 'bower_components/text/text',
-			'underscore': 'bower_components/underscore/underscore',
-			'backbone': 'bower_components/backbone/backbone'
+		// frameworks
+		'jquery': 'bower_components/jquery/dist/jquery',
+		'text': 'bower_components/text/text',
+		'underscore': 'bower_components/underscore/underscore',
+		'backbone': 'bower_components/backbone/backbone'
+	},
+	shim: {
+		'backbone': {
+			deps: ['underscore', 'jquery'],
+			exports: 'Backbone'
 		},
-		shim: {
-			'backbone': {
-				deps: ['underscore', 'jquery'],
-				exports: 'Backbone'
-			},
-			'underscore': {
-				exports: '_'
-			}
+		'underscore': {
+			exports: '_'
 		}
 	}
 })
 
 define([
-	'collection/postsCollection',
+	'collection/postsTableCollection',
 	'underscore',
-	'text!templates/postsTableTemplate',
+	'text!templates/postsTableTemplate.html',
 	'view/postsTableView'
-], function(
+], function (
 	Posts,
 	_,
 	PostsTableTemplate,
 	PostsTableView
-) {
-	var posts = new Posts();
-	posts.fetch({
-		success: function(items, response, options) {
-			var template = _.template(PostsTableTemplate)({posts: items});
-			PostsTableView.render(template);
-		}
+	) {
+		var posts = new Posts();
+		posts.fetch({
+			success: function(items, response, options) {
+				var template = _.template(PostsTableTemplate)({posts: items});
+				PostsTableView.render(template);
+			}
+		});
 	});
-});
