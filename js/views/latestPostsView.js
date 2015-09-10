@@ -4,11 +4,10 @@ define([
 ], function ($, Backbone) {
 
 	var PostsTableView = Backbone.View.extend({
-		el: $('#postsTable'),
-		render: function (template) {
-			this.$el.html(template);
+		render: function () {
+			
 		}
 	});
 	
-	return new PostsTableView();
+	return PostsTableView;
 });

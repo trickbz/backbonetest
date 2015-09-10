@@ -1,14 +1,20 @@
 define([
+	'underscore',
 	'jquery',
-	'backbone'
-], function ($, Backbone) {
+	'backbone',
+	'text!templates/postsCounterTemplate.html',
+], function (_, $, Backbone, PostsCounterTemplate) {
 
-	var PostsTableView = Backbone.View.extend({
-		el: $('#postsTable'),
-		render: function (template) {
-			this.$el.html(template);
+	var PostCounterView = Backbone.View.extend({
+		initialize: function (options) {
+			this.options = options;	
+		},
+		template: _.template(PostsCounterTemplate),
+		render: function () {
+			this.$el.html(this.template({ posts: this.options.posts }));
+			return this;
 		}
 	});
 	
-	return new PostsTableView();
+	return PostCounterView;
 });

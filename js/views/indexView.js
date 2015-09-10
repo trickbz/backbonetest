@@ -1,14 +1,19 @@
 define([
 	'jquery',
-	'backbone'
-], function ($, Backbone) {
+	'backbone',
+	'view/leftPaneView',
+	'view/rightPaneView'
+], function ($, Backbone, LeftPaneView, RightPaneView) {
 
-	var PostsTableView = Backbone.View.extend({
-		el: $('#postsTable'),
-		render: function (template) {
-			this.$el.html(template);
+	var IndexView = Backbone.View.extend({
+		initialize: function (options) {
+			this.options = options;	
+		},
+		render: function () {
+			new LeftPaneView({ el: $("#leftPane"), posts: this.options.posts }).render();
+			return this;
 		}
 	});
-	
-	return new PostsTableView();
+
+	return IndexView;
 });

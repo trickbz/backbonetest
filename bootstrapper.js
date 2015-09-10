@@ -24,21 +24,16 @@ require.config({
 })
 
 define([
-	'collection/postsTableCollection',
 	'underscore',
-	'text!templates/postsTableTemplate.html',
-	'view/postsTableView'
+	'view/indexView',
+	'jquery',
+	'collection/postsTableCollection'
 ], function (
-	Posts,
 	_,
-	PostsTableTemplate,
-	PostsTableView
+	IndexView,
+	$,
+	PostsTableCollection
 	) {
-		var posts = new Posts();
-		posts.fetch({
-			success: function (items, response, options) {
-				var template = _.template(PostsTableTemplate)({ posts: items.toJSON() });
-				PostsTableView.render(template);
-			}
-		});
+
+		new IndexView({ el: $("body") }).render();
 	});

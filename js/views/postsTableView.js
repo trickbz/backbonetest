@@ -10,5 +10,5 @@ define([
 		}
 	});
 	
-	return new PostsTableView();
+	return PostsTableView;
 });
