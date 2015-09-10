@@ -1,24 +1,30 @@
-<table border="1">
-	<tr>
-		<th>id</th>
-		<th>title</th>
-		<th>body</th>
-		<th>createdOn</th>
-	</tr>
-	<% _.each(posts, function(post, index) { %>
+<table class="table table-striped">
+	<thead>
 		<tr>
-			<td>
-				<%= post.id  %>
-			</td>
-			<td>
-				<%= post.title  %>
-			</td>
-			<td>
-				<%= post.body  %>
-			</td>
-			<td>
-				<%= post.createdOn  %>
-			</td>
+			<th>Id</th>
+			<th>Title</th>
+			<th>Body</th>
+			<th>Created On</th>
+			<th></th>
 		</tr>
+	</thead>
+	<tbody>
+		<% _.each(posts, function(post, index) { %>
+			<tr>
+				<td>
+					<%= post.id  %>
+				</td>
+				<td>
+					<%= post.title  %>
+				</td>
+				<td>
+					<%= post.body  %>
+				</td>
+				<td>
+					<%= post.createdOn  %>
+				</td>
+				<td></td>
+			</tr>
 		<% }) %>
+	</tbody>
 </table>
