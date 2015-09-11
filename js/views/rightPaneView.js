@@ -2,14 +2,14 @@ define([
 	'jquery',
 	'backbone',
 	'view/postsTableView',
-], function ($, Backbone, PostsTableView) {
+], function ($, Backbone, PostListItemView) {
 
 	var RightPaneView = Backbone.View.extend({
 		initialize: function (options) {
 			this.options = options;	
 		},
 		render: function () {
-			new PostsTableView({ el: $("#postsTable"), posts: this.options.posts }).render();
+			new PostListItemView({ el: $("#postsTable"), posts: this.options.posts }).render();
 			return this;
 		}
 	});
