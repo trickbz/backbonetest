@@ -1,6 +1,10 @@
 <h5 class="latestPostsHeader">Latest posts:</h5>
 <ul>
-	<% _.each(posts, function(post, index)) { %>
-		<li><%= post.title %></li>
+	<% 
+	_.each(_.last(posts, 5).reverse(), function(post, index) { 
+	%>
+		<li>
+			<a href="#"><%= post.get("title") %></a>
+		</li>
 	<% }) %>
 </ul>

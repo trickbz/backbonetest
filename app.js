@@ -3,11 +3,19 @@ var express = require("express");
 var bodyParser = require("body-parser");
 var app = express();
 
+var roremIpsum = "Lorem ipsum dolor sit amet, dicit quando oratio his ex, etiam civibus quo eu. Ne epicuri scaevola vel, postulant splendide usu no. No vix adhuc lobortis eleifend, qui malorum laboramus intellegat no. Mea deleniti voluptatibus definitionem te, ei tantas accusam mediocritatem ius. Ei sed aliquando expetendis, quo ei facer liber, eos facete audiam timeam eu. Dicat dicunt reformidans sit at, epicurei sensibus abhorreant ei mel, movet praesent referrentur mel ei. Probo solet accommodare ius an. Debet possit conclusionemque ei est, eam ut omnes interpretaris, pri virtute copiosae ne. Dicam efficiendi vix in. At tincidunt necessitatibus sed.";
+
 var posts = [
-	{ id: 1, title: 'Title 1', body: 'Body 1', createdOn: new Date() },
-	{ id: 2, title: 'Title 2', body: 'Body 2', createdOn: new Date() },
-	{ id: 3, title: 'Title 3', body: 'Body 3', createdOn: new Date() },
-	{ id: 4, title: 'Title 4', body: 'Body 4', createdOn: new Date() },
+	{ id: 1, title: 'Title 1', body: roremIpsum, createdOn: new Date() },
+	{ id: 2, title: 'Title 2', body: roremIpsum, createdOn: new Date() },
+	{ id: 3, title: 'Title 3', body: roremIpsum, createdOn: new Date() },
+	{ id: 4, title: 'Title 4', body: roremIpsum, createdOn: new Date() },
+	{ id: 5, title: 'Title 5', body: roremIpsum, createdOn: new Date() },
+	{ id: 6, title: 'Title 6', body: roremIpsum, createdOn: new Date() },
+	{ id: 7, title: 'Title 7', body: roremIpsum, createdOn: new Date() },
+	{ id: 8, title: 'Title 8', body: roremIpsum, createdOn: new Date() },
+	{ id: 9, title: 'Title 9', body: roremIpsum, createdOn: new Date() },
+	{ id: 10, title: 'Title 10', body: roremIpsum, createdOn: new Date() }
 ];
 
 var lastId = 3;

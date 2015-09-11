@@ -6,6 +6,8 @@ define([
 	PostModel
 ) {
 	return Backbone.Collection.extend({
+		initialize: function () {
+		},
 		model: PostModel,
 		url: '/posts'
 	});

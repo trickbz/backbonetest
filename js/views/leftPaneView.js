@@ -11,6 +11,7 @@ define([
 		},
 		render: function () {
 			new PostCounterView({ el: $("#postsCounter"), posts: this.options.posts }).render();
+			new LatestPostsView({ el: $("#latestPosts"), posts: this.options.posts }).render();
 			return this;
 		}
 	});

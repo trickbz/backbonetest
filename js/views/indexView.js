@@ -11,6 +11,7 @@ define([
 		},
 		render: function () {
 			new LeftPaneView({ el: $("#leftPane"), posts: this.options.posts }).render();
+			new RightPaneView({ el: $("#rightPane"), posts: this.options.posts }).render();
 			return this;
 		}
 	});

@@ -34,6 +34,10 @@ define([
 	$,
 	PostsTableCollection
 	) {
-
-		new IndexView({ el: $("body") }).render();
+		var posts = new PostsTableCollection();
+		posts.fetch({
+			success: function (collection, response) {
+				new IndexView({ el: $("body"), posts: collection.models }).render();
+			}
+		});
 	});
