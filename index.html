@@ -3,50 +3,32 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>backbonetest</title>
+	<title>JS Training</title>
 	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
-	<link rel="stylesheet" href="css/index.css">
 </head>
 
 <body>
-
+	
 	<div class="container">
+		<div class="well">
 		<div class="row">
 			<div class="col-md-2">
+				<a href="#/new" class="btn btn-primary">New Post</a>
 			</div>
-			<div class="col-md-10">
-				<div class="toolbar-pane">
-					<h1>JSTRAINING</h1>
-					<button href="#" class="btn btn-link" role="button">All Posts</button>
-					<button id="btnAddPost" class="btn btn-primary">New Post</button>
-				</div>
-			</div>
-		</div>
-		<div class="row">
 			<div class="col-md-2">
-				<div id="leftPane" class="leftPane">
-					<div class="row">
-						<div id="latestPosts"></div>
-					</div>
-					<div class="row">
-						<div id="postsCounter"></div>
-					</div>
-				</div>
+				<a href="#" class="btn btn-link">All Posts</a>
 			</div>
-			<div class="col-md-10">
-				<div id="rightPane">
-					<div class="row">
-					</div>
-					<div class="row">
-						<div id="postsTable"></div>
-					</div>
-				</div>
-			</div>
+		</div>			
 		</div>
 
+		<div class="well">
+			<div class="target">
+				
+			</div>
+		</div>
 	</div>
 
-	<script data-main="bootstrapper" src="bower_components/requirejs/require.js"></script>
+	<script data-main="js/main" src="bower_components/requirejs/require.js"></script>
 
 </body>
 

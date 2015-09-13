@@ -9,6 +9,6 @@ define([
 		initialize: function () {
 		},
 		model: PostModel,
-		url: '/posts'
+		url: '/api/posts'
 	});
 });

@@ -1,0 +1,31 @@
+<div class="row">
+	<div class="col-md-10">
+		<h3>
+			<%= post.title %>
+		</h3>
+	</div>
+	<div class="col-md-2">
+		<%= post.createdOn %>
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-10">
+		<%= post.body %>
+	</div>
+	<div class="col-md-2">
+		
+	</div>
+</div>
+<hr />
+<div class="row">
+	<div class="col-md-1">
+		<a class="btn btn-primary" href="#/<%= post.id %>/edit">Edit</a>		
+	</div>
+	<div class="col-md-1">
+		<a class="btn btn-danger">Delete</a>		
+	</div>
+	<div class="col-md-2">
+		<a href="#" class="btn btn-link">All Posts</a>		
+	</div>
+	
+</div>

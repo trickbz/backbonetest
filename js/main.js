@@ -5,12 +5,15 @@ require.config({
 		'view': 'js/views',
 		'model': 'js/models',
 		'collection': 'js/collections',
+		'router': 'js/router',
 		
 		// frameworks
 		'jquery': 'bower_components/jquery/dist/jquery',
 		'text': 'bower_components/text/text',
 		'underscore': 'bower_components/underscore/underscore',
-		'backbone': 'bower_components/backbone/backbone'
+		'backbone': 'bower_components/backbone/backbone',
+		'moment': 'bower_components/moment/min/moment.min',
+		'stickit': 'bower_components/backbone.stickit/backbone.stickit'
 	},
 	shim: {
 		'backbone': {
@@ -21,23 +24,13 @@ require.config({
 			exports: '_'
 		}
 	}
-})
+});
 
 define([
-	'underscore',
-	'view/indexView',
-	'jquery',
-	'collection/postsTableCollection'
+	'js/app'
 ], function (
-	_,
-	IndexView,
-	$,
-	PostsTableCollection
+	App
 	) {
-		var posts = new PostsTableCollection();
-		posts.fetch({
-			success: function (collection, response) {
-				new IndexView({ el: $("body"), posts: collection.models }).render();
-			}
-		});
+		'use strict';
+		return App.initialize();
 	});

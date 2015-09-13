@@ -1,3 +1,7 @@
+var express = require("express");
+var bodyParser = require("body-parser");
+var app = express();
+
 /// <reference path="typings/node/node.d.ts"/>
 var express = require("express");
 var bodyParser = require("body-parser");
@@ -25,11 +29,11 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.set("view engine", "html");
 app.use(express.static(__dirname));
 
-app.get("/posts", function (req, res) {
+app.get("/api/posts", function (req, res) {
 	res.send(posts);
 });
 
-app.post('/posts', function (req, res) {
+app.post('/api/posts', function (req, res) {
 	lastId++;
 	var post = {
 		id: lastId,
@@ -41,15 +45,15 @@ app.post('/posts', function (req, res) {
 	res.send([]);
 });
 
-app.get('/posts/:id', function (req, res) {
+app.get('/api/posts/:id', function (req, res) {
 	var id = req.params.id;
 	var post = posts.filter(function (post) {
 		return (post.id == id);
 	});
-	res.send(post);
+	res.send(post[0]);
 });
 
-app.delete('/posts:id', function (req, res) {
+app.delete('/api/posts:id', function (req, res) {
 	var id = req.params.id;
 	posts = posts.filter(function (post) {
 		return (post.id != id);

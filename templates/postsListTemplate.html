@@ -1,0 +1,23 @@
+<% _.each(posts.reverse(), function(post, index) { %>
+	<div class="row">
+		<div class="col-md-10">
+			<h3>
+				<a href="#/<%= post.id %>/view">
+					<%= post.get("title") %>
+				</a>
+			</h3>
+		</div>
+		<div class="col-md-2">
+			<small><%= post.get("createdOn") %></small>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-10">
+			<%= post.get("body") %>
+		</div>
+		<div class="col-md-2">
+			<button class="btn btn-danger" class="deletePost">Delete</button>
+		</div>
+	</div>
+	<hr />
+<% }) %>
