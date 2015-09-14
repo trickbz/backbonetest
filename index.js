@@ -53,6 +53,24 @@ app.get('/api/posts/:id', function (req, res) {
 	res.send(post[0]);
 });
 
+app.put("/api/posts/:id", function (req, res) {
+	var postId = req.params.id;
+	var title = req.body.title;
+	var body = req.body.body;
+
+	var post;
+	debugger;
+	for (var i = 0; i < posts.length; i++) {
+		if (posts[i].id == postId) {
+			posts[i].title = title;
+			posts[i].body = body;
+			post = posts[i];
+			break;
+		}
+	}
+	res.send(post);
+});
+
 app.delete('/api/posts:id', function (req, res) {
 	var id = req.params.id;
 	posts = posts.filter(function (post) {

@@ -44,10 +44,9 @@ define([
 
 			submitPost: function (event) {
 				event.preventDefault();
-				var self = this;
 				event.currentTarget.checkValidity();
 				// return false;
-				console.log(this.model);
+				this.model.save();
 				Backbone.history.navigate('#', true);
 			}
 		});
