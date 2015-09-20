@@ -2,12 +2,16 @@ define([
 	'backbone',
 	'view/postsListView',
 	'view/viewPostView',
-	'view/editPostView'
+	'view/editPostView',
+	'view/countOfPostsView',
+	'view/latestPostsView'
 ], function (
 	Backbone,
 	PostsListView,
 	ViewPostView,
-	EditPostView
+	EditPostView,
+	CountOfPostsView,
+	LatestPostsView
 	) {
 		'use strict';
 		var Router = Backbone.Router.extend({
@@ -28,13 +32,16 @@ define([
 			},
 			newPost: function () {
 				$(".target").html(new EditPostView().render().$el);
+			},
+			change: function () {
+				$("#countOfPosts").html(new CountOfPostsView().render().$el);
+				$("#latestPosts").html(new LatestPostsView().render().$el);
 			}
 		});
 
 		Router.prototype.initialize = function () {
-
+			this.listenTo(this, "all", this.change);
 		}
-
 
 		return new Router();
 

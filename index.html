@@ -8,24 +8,41 @@
 </head>
 
 <body>
-	
+
 	<div class="container">
 		<div class="well">
-		<div class="row">
-			<div class="col-md-2">
-				<a href="#/new" class="btn btn-primary">New Post</a>
+			<div class="row">
+				<div class="col-md-2">
+					<a href="#/new" class="btn btn-primary">New Post</a>
+				</div>
+				<div class="col-md-2">
+					<a href="#" class="btn btn-link">All Posts</a>
+				</div>
 			</div>
-			<div class="col-md-2">
-				<a href="#" class="btn btn-link">All Posts</a>
-			</div>
-		</div>			
 		</div>
 
-		<div class="well">
-			<div class="target">
-				
+		<div class="row">
+			<div class="col-md-3">
+				<div class="row">
+					<div class="well">
+						<div id="latestPosts"></div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="well">
+						<div id="countOfPosts"></div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-9">
+				<div class="well">
+					<div class="target">
+					</div>
+				</div>
 			</div>
 		</div>
+
+
 	</div>
 
 	<script data-main="js/main" src="bower_components/requirejs/require.js"></script>

@@ -18,7 +18,7 @@ define([
 				var collection = new PostsCollection();
 				collection.fetch({
 					success: function (collection, response) {
-						self.$el.html(self.template({ posts: collection.models }));
+						self.$el.html(self.template({ posts: collection.toJSON() }));
 					}
 				});
 				return this;

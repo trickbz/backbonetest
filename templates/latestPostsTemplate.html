@@ -1,0 +1,8 @@
+Latest posts:
+<ul>
+<% _.each(posts.reverse(), function(post, index) { %>
+	<li>
+		<a href="#/<%= post.id %>/view"><%= post.title %></a>
+	</li>	
+<% }) %>
+</ul>

@@ -3,17 +3,17 @@
 		<div class="col-md-10">
 			<h3>
 				<a href="#/<%= post.id %>/view">
-					<%= post.get("title") %>
+					<%= post.title %>
 				</a>
 			</h3>
 		</div>
 		<div class="col-md-2">
-			<small><%= post.get("createdOn") %></small>
+			<small><%= post.createdOn %></small>
 		</div>
 	</div>
 	<div class="row">
 		<div class="col-md-12">
-			<%= post.get("body") %>
+			<%= post.body %>
 		</div>
 	</div>
 	<hr />
