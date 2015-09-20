@@ -22,7 +22,7 @@ var posts = [
 	{ id: 10, title: 'Title 10', body: roremIpsum, createdOn: new Date() }
 ];
 
-var lastId = 3;
+var lastId = 10;
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -39,7 +39,7 @@ app.post('/api/posts', function (req, res) {
 		id: lastId,
 		title: req.body.title,
 		body: req.body.body,
-		createdOn: req.body.title
+		createdOn: new Date()
 	};
 	posts.push(post);
 	res.send([]);
@@ -71,7 +71,7 @@ app.put("/api/posts/:id", function (req, res) {
 	res.send(post);
 });
 
-app.delete('/api/posts:id', function (req, res) {
+app.delete('/api/posts/:id', function (req, res) {
 	var id = req.params.id;
 	posts = posts.filter(function (post) {
 		return (post.id != id);

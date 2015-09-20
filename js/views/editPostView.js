@@ -34,7 +34,7 @@ define([
 			},
 
 			events: {
-				"submit #postEditForm": "submitPost"
+				"submit #postEditForm": "submitPost",
 			},
 			
 			bindings: {
@@ -49,6 +49,8 @@ define([
 				this.model.save();
 				Backbone.history.navigate('#', true);
 			}
+	
+
 		});
 
 		return ViewPostView;

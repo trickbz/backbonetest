@@ -26,6 +26,15 @@ define([
 					}
 				});
 				return this;				
+			},
+			
+			events: {
+				"click #btnDeletePost": "deletePost"
+			},
+			
+			deletePost: function () {
+				this.model.destroy();
+				Backbone.history.navigate('#', true);
 			}
 		});
 		
