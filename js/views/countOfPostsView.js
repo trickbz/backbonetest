@@ -15,21 +15,13 @@ define([
 			template: _.template(CountOfPostsTemplate),
 			initialize: function (options) {
 				this.options = options;
-				
 			},
 			
 			render: function () {
 				var self = this;
-				var collection = new PostsCollection();
-				collection.fetch({
-					success: function (collection, response) {
-						self.$el.html(self.template({ countOfPosts: collection.length }));		
-					}
-				});
-				
+				self.$el.html(self.template({ countOfPosts: self.options.collection.length }));
 				return this;
 			}
-			
 		});
 		
 		return CountOfPostsView;

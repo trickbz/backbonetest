@@ -1,11 +1,11 @@
 <form action="post" class="form-horizontal" id="postEditForm">
 	<div class="form-group">
-		<label for="postTitle">Title</label>
-		<input id="postTitle" value="<%= post.title %>" type="text" class="form-control" placeholder="Post Title">
+		<label for="title">Title</label>
+		<input id="title" value="<%= post.title %>" type="text" class="form-control" placeholder="Post Title">
 	</div>
 	<div class="form-group">
-		<label for="postBody">Body</label>
-		<textarea name="postBody" id="postBody" rows="10" class="form-control" placeholder="Post Body"><%= post.body %></textarea>
+		<label for="body">Body</label>
+		<textarea name="body" id="body" rows="10" class="form-control" placeholder="Post Body"><%= post.body %></textarea>
 	</div>
 	<button type="submit" class="btn btn-primary">Save</button>
 	<a href="#" class="btn btn-default">Cancel</a>

@@ -16,18 +16,10 @@ define([
 			initialize: function (options) {
 				this.options = options;
 			},
-			
 			render: function () {
-				var self = this;
-				var collection = new PostsCollection();
-				collection.fetch({
-					success: function (collection, response) {
-						var lastRecordsCount = 5;
-						var topN = new Backbone.Collection(collection.last(lastRecordsCount));
-						self.$el.html(self.template({ posts: topN.toJSON() }));		
-					}
-				});
-				
+				var lastRecordsCount = 5;
+				var topN = new Backbone.Collection(this.options.collection.last(lastRecordsCount));
+				this.$el.html(this.template({ posts: topN.toJSON() }));				
 				return this;
 			}
 			

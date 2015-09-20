@@ -17,7 +17,6 @@ define([
 				this.options = options;
 				this.model = new PostModel({id: options.id});
 			},
-			
 			render: function () {
 				var self = this;
 				this.model.fetch({
@@ -27,11 +26,9 @@ define([
 				});
 				return this;				
 			},
-			
 			events: {
 				"click #btnDeletePost": "deletePost"
 			},
-			
 			deletePost: function () {
 				this.model.destroy();
 				Backbone.history.navigate('#', true);

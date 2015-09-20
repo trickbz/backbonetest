@@ -11,12 +11,19 @@ define([
 	) {
 		'use strict';
 		
-		var PostsListVIew = Backbone.View.extend({
+		var PostsListView = Backbone.View.extend({
+			initialize: function (attrs) {
+				this.attrs = attrs;
+			},
 			template: _.template(PostsListTemplate),
 			render: function () {
 				var self = this;
-				var collection = new PostsCollection();
-				collection.fetch({
+				// var collection = new PostsCollection();
+				// debugger;
+				// this.attrs.collection.on('add remove', function() {
+				// 	self.trigger('postsCollectionChanged', self.attrs.collection.length);
+				// });
+				this.attrs.collection.fetch({
 					success: function (collection, response) {
 						self.$el.html(self.template({ posts: collection.toJSON() }));
 					}
@@ -25,6 +32,6 @@ define([
 			}
 		});
 		
-		return PostsListVIew;
+		return PostsListView;
 
 	});

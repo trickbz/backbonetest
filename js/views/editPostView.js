@@ -18,8 +18,9 @@ define([
 			initialize: function (options) {
 				this.options = options;
 				this.model = new PostModel();
-				if (options && options.id)
+				if (options && options.id) {
 					this.model.set("id", options.id);
+				}
 			},
 
 			render: function () {
@@ -36,20 +37,29 @@ define([
 			events: {
 				"submit #postEditForm": "submitPost",
 			},
-			
+
 			bindings: {
-				"#postTitle": "title",
-				"#postBody": "body"
+				"#title": "title",
+				"#body": "body"
 			},
 
 			submitPost: function (event) {
 				event.preventDefault();
 				event.currentTarget.checkValidity();
-				// return false;
-				this.model.save();
-				Backbone.history.navigate('#', true);
+				if (this.model.isValid()) {
+					this.model.save();
+					Backbone.history.navigate('#', true);
+				} else {
+					this.showErrors(this.model.validationError);
+				}
+			},
+			
+			showErrors: function (errors) {
+				_.each(errors, function (error) {
+					console.log(error.field)
+				});
 			}
-	
+
 
 		});
 
